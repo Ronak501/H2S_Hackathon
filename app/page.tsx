@@ -17,7 +17,10 @@ export default function Home() {
               <h1 className="text-2xl font-bold text-gray-900">FinInsight</h1>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
+              <button
+                type="button"
+                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+              >
                 Sign In
               </button>
               <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition-colors">
@@ -68,6 +71,6 @@ export default function Home() {
         </div>
       </div>
     </main>
-  )
+  );
 }
 

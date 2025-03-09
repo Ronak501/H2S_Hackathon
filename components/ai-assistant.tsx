@@ -115,19 +115,33 @@ export default function AIAssistant() {
           {messages.map((message) => (
             <div
               key={message.id}
-              className={`flex mb-4 ${message.role === "assistant" ? "justify-start" : "justify-end"}`}
+              className={`flex mb-4 ${
+                message.role === "assistant" ? "justify-start" : "justify-end"
+              }`}
             >
-              <div className={`flex max-w-[80%] ${message.role === "assistant" ? "flex-row" : "flex-row-reverse"}`}>
+              <div
+                className={`flex max-w-[80%] ${
+                  message.role === "assistant" ? "flex-row" : "flex-row-reverse"
+                }`}
+              >
                 <Avatar
                   className={`h-8 w-8 ${
-                    message.role === "assistant" ? "bg-blue-100 text-blue-600 mr-2" : "bg-gray-100 text-gray-600 ml-2"
+                    message.role === "assistant"
+                      ? "bg-blue-100 text-blue-600 mr-3"
+                      : "bg-gray-100 text-gray-600 ml-2"
                   }`}
                 >
-                  {message.role === "assistant" ? <BotIcon className="h-4 w-4" /> : <UserIcon className="h-4 w-4" />}
+                  {message.role === "assistant" ? (
+                    <BotIcon className="h-4 w-4 flex items-center justify-center mx-auto my-auto" />
+                  ) : (
+                    <UserIcon className="h-4 w-4 mx-auto my-auto" />
+                  )}
                 </Avatar>
                 <div
                   className={`rounded-lg px-3 py-2 ${
-                    message.role === "assistant" ? "bg-blue-50 text-gray-800" : "bg-blue-600 text-white"
+                    message.role === "assistant"
+                      ? "bg-blue-50 text-gray-800"
+                      : "bg-blue-600 text-white"
                   }`}
                 >
                   <p className="text-sm">{message.content}</p>
@@ -190,11 +204,12 @@ export default function AIAssistant() {
             </Button>
           </div>
           <p className="text-xs text-gray-500 mt-2">
-            This assistant provides educational information, not financial advice.
+            This assistant provides educational information, not financial
+            advice.
           </p>
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 
